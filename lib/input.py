@@ -10,7 +10,7 @@ class Reader:
         self.real: bool = real
 
     def read_file(self):
-        input_type: str = "input" if self.real else "example"
+        input_type: str = "real" if self.real else "example"
         filename: str = f"inputs/day-{self.day}/{input_type}.txt"
 
         with open(filename, "r") as f:
