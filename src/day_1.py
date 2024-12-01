@@ -7,7 +7,7 @@ DAY = 1
 REAL = True
 
 
-@timer_ns
+@timer
 def p1_naive(text: list[str]):
     list_1: list[int] = []
     list_2: list[int] = []
@@ -32,7 +32,7 @@ def p1_naive(text: list[str]):
     return total
 
 
-@timer_ns
+@timer
 def p1_just_sum(text: list[str]):
     sum_1: int = 0
     sum_2: int = 0
@@ -45,7 +45,7 @@ def p1_just_sum(text: list[str]):
     return abs(sum_2 - sum_1)
 
 
-@timer_ns
+@timer
 def p2_naive(text: list[str]) -> int:
     list_1: list[int] = []
     list_2: dict[int, int] = {}
@@ -70,13 +70,42 @@ def p2_naive(text: list[str]) -> int:
     return total
 
 
+@timer
+def p2_histogram(text: list[str]) -> int:
+    list_1: dict[int, int] = {}
+    list_2: dict[int, int] = {}
+
+    for line in text:
+        parts: list[str] = line.split(" ")
+        a: int = int(parts[0])
+        b: int = int(parts[-1])
+
+        if a in list_1:
+            list_1[a] += 1
+        else:
+            list_1[a] = 1
+
+        if b in list_2:
+            list_2[b] += 1
+        else:
+            list_2[b] = 1
+
+    total: int = 0
+    for x in list_1:
+        if x in list_2:
+            total += x * list_1[x] * list_2[x]
+
+    return total
+
+
 class Day_1(Solution):
     def __init__(self):
         super().__init__(DAY, REAL)
 
     def run(self):
         text = self.get_input()[:-1]
-        # print(f"part 1, naive: {p1_naive(text)}")
-        # print(f"part 1, advanced: {p1_just_sum(text)}")
+        print(f"part 1, naive: {p1_naive(text)}")
+        print(f"part 1, advanced: {p1_just_sum(text)}")
 
         print(f"part 2, naive: {p2_naive(text)}")
+        print(f"part 2, histogram: {p2_histogram(text)}")
