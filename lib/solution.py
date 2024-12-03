@@ -14,3 +14,7 @@ class Solution:
     def get_input(self) -> list[str]:
         reader = input.Reader(self.day, self.real)
         return reader.read_lines()
+
+    def get_raw(self) -> str:
+        reader = input.Reader(self.day, self.real)
+        return reader.read_file()
