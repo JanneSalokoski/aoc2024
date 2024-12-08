@@ -8,7 +8,7 @@ from src.day_7 import Day_7
 
 
 def main():
-    solution = Day_6()
+    solution = Day_7()
     solution.run()
 
 
