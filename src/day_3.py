@@ -173,11 +173,11 @@ class Day_3(Solution):
     def run(self):
         text = self.get_raw()
         # print(f"part 1, naive: {p1_naive(text)}")
-        print(f"part 1, alloc less: {p1_alloc_less(text)}")
-        print(f"part 1, no regex: {p1_no_regex(text)}")
+        # print(f"part 1, alloc less: {p1_alloc_less(text)}")
+        # print(f"part 1, no regex: {p1_no_regex(text)}")
 
         print(f"part 2, naive: {p2_naive(text)}")
-        # print(f"part 2, no_regex: {p2_no_regex(text)}")
+        print(f"part 2, no_regex: {p2_no_regex(text)}")
 
         # for i in range(len(no_pairs)):
         # print(f"{re_pairs[i]}\t{no_pairs[i]}\t{re_pairs[i]==no_pairs[i]}")
