@@ -5,10 +5,11 @@ from src.day_4 import Day_4
 from src.day_5 import Day_5
 from src.day_6 import Day_6
 from src.day_7 import Day_7
+from src.day_8 import Day_8
 
 
 def main():
-    solution = Day_7()
+    solution = Day_3()
     solution.run()
 
 
